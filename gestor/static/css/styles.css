@@ -1,1 +1,32 @@
-#mapa { height: 400px ;}
+#mapa {
+    height: 400px;
+}
+
+#body {
+    background-image: url(fondo.jpg);
+}
+
+.inicio {
+    font-size: medium;
+
+}
+
+.foto {
+    margin-right: 3px;
+    border: 5px double rgb(0, 0, 0);
+}
+
+ul {
+    width: 30%;
+    margin: auto;
+}
+
+.pagination {
+    width: 25%;
+    margin: auto;
+}
+
+#tienda{
+    width: 45%;
+    margin: auto;
+}

@@ -10,6 +10,10 @@ class Equipo(models.Model):
 
     def __str__(self):
         return self.nombre
+    
+    desc = models.CharField('Descripcion', max_length=5000, null=True)
+
+    img = models.CharField('Imagen', max_length=500, null=True)
 
     class Meta:
         verbose_name = 'Equipo'

@@ -4,47 +4,30 @@
 
 {% block extracss %}
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-crossorigin=""/>
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
 
 
 
 {% endblock%}
 
 {% block content %}
-<h1>Índice</h1>
+<h1>Let's play Blood Bowl!!</h1>
+
 <strong class=my-5>Visitas: {{visitas}}</strong>
-<hr>
+<br></br>
+<div id=inicio>
+    Blood Bowl es un juego de tablero por turnos para dos jugadores. El juego está ambientado en el mundo de Warhammer
+    Fantasy poblado por razas fantásticas como humanos,enanos, goblins, elfos, orcos, etc.
+    Blood Bowl combina elementos fantásticos con el deporte del fútbol americano,
+    enfrentando a dos equipos (cada uno controlado por un solo «entrenador»).
+    Al estilo tradicional de los juegos de estrategia, cada una de estas razas tiene características y habilidades propias 
+    de las que deberán intentar sacar provecho para conseguir la victoria. Los jugadores  obtienen experiencia partido a partido,
+    y desarrollan habilidades nuevas con las que mejorar su rendimiento en el campo.
+</div>
+<br>
+<div>
+    <img class=foto src="https://assets.dicebreaker.com/blood-bowl-miniatures-game-gameplay.png/BROK/resize/844%3E/format/jpg/quality/80/blood-bowl-miniatures-game-gameplay.png">
+</div>
 
-<h2 class="mt-4">Equipos</h2>
-<ul>
-    {% for equipo in Equipo %}
-    <li>{{equipo.nombre}}
-
-    </li>
-
-    {% endfor %}
-</ul>
-<hr>
-<div id="mapa"></div>
-</hr>
-
-{% endblock%}
-
-{% block extrajs%}
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-crossorigin=""></script>
-
-<script>
-     var mimapa = L.map('mapa').setView([41.6630276,-0.8625994], 13);
-
-L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-maxZoom: 18
-}).addTo(mimapa);
-L.marker([41.6630276,-0.8625994]).addTo(mimapa).bindPopup("Odisea Games");
-
-
-</script>
 {% endblock%}

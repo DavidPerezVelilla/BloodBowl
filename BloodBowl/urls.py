@@ -23,7 +23,7 @@ from gestor.views import indice
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('gestor/', include('gestor.urls')),
+    path('gestor/', include('gestor.urls')),
     
     # Raíz de nuestra web
     path('', indice, name='indice'),
