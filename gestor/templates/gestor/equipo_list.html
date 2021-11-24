@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Equipos{% endblock %}
+
+{% block content %}
+
+
+<h2>Descubre las fortalezas y debilidades de cada equipo y averigua cuál es el más apropiado para tu forma de jugar; hay un equipo para cada tipo de entrenador.</h2>
+<h5>Fama, gloria u oro; cada equipo tiene su propio motivo por el que bajar al violento terreno de juego.</h5>
+<p>Tanto si te gusta que tu equipo juegue limpio, y gane mediante trabajo duro y proezas físicas, o prefieres apalear a
+    tus rivales y arrastrar el balón ensangrentado hasta la línea de Touchdown, hay un equipo para ti. Echa un buen
+    vistazo a cada equipo y encuentra uno con el que te entiendas bien. Verás que hay equipos que siempre son populares
+    por ser equilibrados o tener puntos fuertes muy obvios, junto con alineaciones menos habituales que requieren mayor
+    planificación y estrategia.
+
+    No hay una forma incorrecta de jugar al Blood Bowl, y vale la pena saber cómo juega cada equipo.</p>
+
+<ul class=eqlist>
+    {% for equipo in object_list %}
+    <li><a href="{% url 'detalle_equipo' equipo.id%}">{{equipo.nombre}}</a></li>
+    {% endfor %}
+</ul>
+
+{% if is_paginated %}
+<div class="pagination">
+    <span class="page-links">
+        {% if page_obj.has_previous %}
+        <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">anterior</a>
+        {% endif %}
+        <span class="page-current">
+            Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+        </span>
+        {% if page_obj.has_next %}
+        <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">siguiente</a>
+        {% endif %}
+    </span>
+</div>
+<img class=foto class=eqimg src="https://www.warhammer-community.com/wp-content/uploads/2021/04/CezclvpZkMMsLLzS.jpg">
+{% endif %}
+
+{% endblock%}

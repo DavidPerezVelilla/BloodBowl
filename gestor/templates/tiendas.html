@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}BloodBowl{% endblock %}
+
+{% block extracss %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+crossorigin=""/>
+
+
+
+{% endblock%}
+
+{% block content %}
+<h1 id=tienda class="mt-4">Tiendas en Zaragoza</h1>
+
+<ul>
+    <li><a href="https://www.zerca.com/v/odisea-games" target="_blank">Odisea Games</a></li>
+    <li><a href="https://www.goblintrader.es/es/" target="_blank">Goblin Trader</a></li>
+    <li><a href="https://www.games-workshop.com/es-ES/Warhammer-Zaragoza" target="_blank">Warhammer Store</a></li>
+</ul>
+<hr>
+<div id="mapa"></div>
+</hr>
+
+{% endblock%}
+
+{% block extrajs%}
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+crossorigin=""></script>
+
+<script>
+     var mimapa = L.map('mapa').setView([41.6630276,-0.8625994], 13);
+     /*var gts = L.map('mapa').setView([41.6498335,-0.8968779], 13);
+     var wrh = L.map('mapa').setView([1.6463809,-0.8808143], 13);*/
+L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+maxZoom: 18
+}).addTo(mimapa)
+L.marker([41.6630276,-0.8625994]).addTo(mimapa).bindPopup("Odisea Games");
+L.marker([41.6498335,-0.8968779]).addTo(mimapa).bindPopup("Goblin Trader");
+L.marker([41.6463809,-0.8808143]).addTo(mimapa).bindPopup("Warhammer Store");
+
+
+</script>
+{% endblock%}

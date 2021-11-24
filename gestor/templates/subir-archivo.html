@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Subir Archivos</h1>
+<hr>Carga tu plantilla de equipo: </hr>
+<br></br>
+<form action="{% url 'subir_archivo' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="archivo">
+    <input type="submit" value="Subir">
+</form>
+<hr>
+<img class=foto src="https://i.3djuegos.com/juegos/16620/blood_blowl_iii/fotos/noticias/blood_blowl_iii-4865525.webp">
+
+{% endblock %}
