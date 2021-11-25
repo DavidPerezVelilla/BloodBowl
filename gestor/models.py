@@ -1,4 +1,7 @@
+from typing import Generic
 from django.db import models
+from django.contrib.messages.views import SuccessMessageMixin
+
 
 # Create your models here.
 class Equipo(models.Model):
@@ -7,6 +10,7 @@ class Equipo(models.Model):
 
     raza = models.ForeignKey('Razas', on_delete=models.SET_NULL,
         null=True, blank=True)
+    
 
     def __str__(self):
         return self.nombre
@@ -46,3 +50,5 @@ class Jugador (models.Model):
 
     def __str__(self):
         return self.nombre
+
+

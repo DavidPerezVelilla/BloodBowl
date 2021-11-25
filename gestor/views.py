@@ -1,3 +1,4 @@
+from typing import Generic
 from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.urls.base import is_valid_path
@@ -9,7 +10,8 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.decorators import login_required
 import os #esto es para construir rutas con os.path
 from django.conf import settings
-from gestor.models import Equipo, Jugador 
+from gestor.models import Equipo, Jugador
+from gestor.forms import EquipoForm 
 
 
 # Create your views here.
@@ -78,6 +80,25 @@ class EquiposListView(generic.ListView):
 class EquipoDetailView(generic.DetailView):
    
     model = Equipo
-    
 
+class JugadoresDetailView(generic.DetailView):
+
+    model = Jugador
+
+@login_required
+def crear_equipo(request):
+    if request.method == 'POST':
+        form = EquipoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # Mensaje para informar éxito redirección
+            messages.add_message(request, 
+                messages.SUCCESS, 
+                'Equipo creado.')
+            return redirect('/')
+    else:
+        form = EquipoForm()
+    datos = {'form': EquipoForm()}
+    return render(request, 'crear_equipo.html', 
+        context=datos)
     
