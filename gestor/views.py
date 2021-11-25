@@ -75,7 +75,7 @@ class SearchResultsListView(ListView):
 class EquiposListView(generic.ListView):
     
     model = Equipo
-    paginate_by = 5
+    paginate_by = 6
 
 class EquipoDetailView(generic.DetailView):
    

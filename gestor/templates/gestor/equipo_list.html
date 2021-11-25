@@ -15,11 +15,11 @@
 
     No hay una forma incorrecta de jugar al Blood Bowl, y vale la pena saber cómo juega cada equipo.</p>
 
-<ul class=eqlist>
+
     {% for equipo in object_list %}
-    <li><a href="{% url 'detalle_equipo' equipo.id%}">{{equipo.nombre}}</a></li>
+   <a href="{% url 'detalle_equipo' equipo.id%}"> <img src="{{equipo.incono}}"></a>
     {% endfor %}
-</ul>
+
 
 {% if is_paginated %}
 <div class="pagination">

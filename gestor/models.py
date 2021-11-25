@@ -19,6 +19,8 @@ class Equipo(models.Model):
 
     img = models.CharField('Imagen', max_length=500, null=True)
 
+    incono = models.CharField('Icono', max_length=500, null=True)
+
     class Meta:
         verbose_name = 'Equipo'
         verbose_name_plural = 'Equipos'
