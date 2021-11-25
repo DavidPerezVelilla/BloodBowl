@@ -5,10 +5,20 @@
 {% block content %}
 
 <p><b>{{equipo.nombre}}</b></p>
-<br>
+
 <p><b>Raza: </b>{{equipo.raza}}</p>
-<br>
+
 <p><b>Descripcion:</b> {{equipo.desc}}</p>
-<br>
+
+<p><b>Jugadores:</b>
+<ul>
+    
+    {% for jugador in equipo.jugador_set.all %}
+    <li><a href="{% url 'detalle_jugador' jugador.id%}">{{jugador}}</a></li>
+     {% endfor %}
+ 
+</ul>
+</p>
+
 <img class=foto src="{{equipo.img}}">
 {% endblock%}

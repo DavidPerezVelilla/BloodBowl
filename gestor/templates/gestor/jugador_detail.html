@@ -5,8 +5,33 @@
 {% block content %}
 
 <p><b>{{jugador.nombre}}</b></p>
-<br>
-<p><b>Raza: </b>{{jugador.equipo}}</p>
+
+<p><b>Raza: </b>{{jugador.equipo.raza}}</p>
+
+<p><b>Equipo: </b>{{jugador.equipo}}</p>
+
+<p><b>Atributos: </b>
+<table id="tj">
+    <tr>
+        <th id=i>Coste</th>
+        <th id=i>Movimiento</th>
+        <th id=i>Fuerza</th>
+        <th id=i>Agilidad</th>
+        <th id=i>Pase</th>
+        <th id=i>Armadura</th>
+        <th id=i>Habilidades</th>
+    </tr >
+    <tr>
+        <td id=j>{{jugador.coste}}</td>
+        <td id=j>{{jugador.movimiento}}</td>
+        <td id=j>{{jugador.fuerza}}</td>
+        <td id=j>{{jugador.agilidad}}</td>
+        <td id=j>{{jugador.pase}}</td>
+        <td id=j>{{jugador.armadura}}</td>
+        <td id=j>{{jugador.habilidades}}</td>
+    </tr>
+</table>
+</p>
 <br>
 
 {% endblock%}

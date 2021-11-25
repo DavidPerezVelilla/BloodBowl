@@ -12,13 +12,18 @@ crossorigin=""/>
 {% endblock%}
 
 {% block content %}
+
 <h1 id=tienda class="mt-4">Tiendas en Zaragoza</h1>
 
-<ul>
-    <li><a href="https://www.zerca.com/v/odisea-games" target="_blank">Odisea Games</a></li>
-    <li><a href="https://www.goblintrader.es/es/" target="_blank">Goblin Trader</a></li>
-    <li><a href="https://www.games-workshop.com/es-ES/Warhammer-Zaragoza" target="_blank">Warhammer Store</a></li>
-</ul>
+<br>
+<div id="ptiendas">
+    <a href="https://www.zerca.com/v/odisea-games" target="_blank"><img id="itienda" src="https://lh3.googleusercontent.com/-T3a48b4Ys4g/AAAAAAAAAAI/AAAAAAAAAAA/mLfhY4fQxMI/s44-p-k-no-ns-nd/photo.jpg" title="Odisea Games"></a>
+    <a href="https://www.goblintrader.es/es/" target="_blank"><img id="itienda" src="https://scontent.fbcn6-1.fna.fbcdn.net/v/t1.6435-9/46362797_2139598199624984_4031794931579224064_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=973b4a&_nc_ohc=BPEMkAkH4NoAX-860i5&_nc_ht=scontent.fbcn6-1.fna&oh=f16f4009e7cb84a88e3f58418c5a7acc&oe=61C4BD0D" title="Goblin Trader"></a>
+    <a href="https://www.games-workshop.com/es-ES/Warhammer-Zaragoza" target="_blank"><img id="itienda" src="https://1000marcas.net/wp-content/uploads/2021/05/Warhammer-logo-500x500.png" title="Warhammer Store"></a>
+    <a href="https://quinto-elemento.es/es/" target="_blank"><img id="itienda" src="https://lh3.googleusercontent.com/-Q8du-jtRMyw/AAAAAAAAAAI/AAAAAAAAAAA/dWgvmX7wbGQ/s44-p-k-no-ns-nd/photo.jpg" title="Quinto Elemento"></a>
+    <a href="https://ociomodell.com" target="_blank"><img id="itienda" src="https://lh5.googleusercontent.com/-M9SgxvS2vpQ/AAAAAAAAAAI/AAAAAAAAAAA/0jXvIAw2b40/s44-p-k-no-ns-nd/photo.jpg" title="Ociomodell"></a>
+    <a href="https://doctorocio.es" target="_blank"><img id="itienda" src="https://lh3.googleusercontent.com/-gRSFnHxNApc/AAAAAAAAAAI/AAAAAAAAAAA/BNZa1mdfFTI/s44-p-k-no-ns-nd/photo.jpg" title="Doctor Ocio"></a>
+</div>
 <hr>
 <div id="mapa"></div>
 </hr>
@@ -32,15 +37,17 @@ crossorigin=""></script>
 
 <script>
      var mimapa = L.map('mapa').setView([41.6630276,-0.8625994], 13);
-     /*var gts = L.map('mapa').setView([41.6498335,-0.8968779], 13);
-     var wrh = L.map('mapa').setView([1.6463809,-0.8808143], 13);*/
+    
 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-maxZoom: 18
+maxZoom: 12
 }).addTo(mimapa)
 L.marker([41.6630276,-0.8625994]).addTo(mimapa).bindPopup("Odisea Games");
 L.marker([41.6498335,-0.8968779]).addTo(mimapa).bindPopup("Goblin Trader");
 L.marker([41.6463809,-0.8808143]).addTo(mimapa).bindPopup("Warhammer Store");
+L.marker([41.6409667,-0.884998]).addTo(mimapa).bindPopup("Doctor Ocio");
+L.marker([41.6626129,-0.8723157]).addTo(mimapa).bindPopup("Ociomodell");
+L.marker([41.6244361,-0.9287364]).addTo(mimapa).bindPopup("Quinto Elemento");
 
 
 </script>

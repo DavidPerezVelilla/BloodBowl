@@ -3,24 +3,7 @@
 {% block title %}Búsqueda{% endblock %}
 
 {% block content %}
-<h1>Búsqueda</h1>
-
-<hr>
-<!-- formulario de búsqueda -->
-<form class="form-inline mt-2 mt-md-0" action="{% url 'buscar' %}"
-    method="get">
-    <input 
-        name="q" 
-        class="form-control mr-sm-2" 
-        type="text" 
-        placeholder="Introduce nombre del equipo"
-        {% if query %}
-            value = {{query}}
-        {% endif %}
-        aria-label="Search">
-</form>
-
-<!-- fin formuoario-->
+<h1>Resultados</h1>
 <div class="row mt-4">
 <hr>
 <div class="col-md-12">
@@ -30,12 +13,13 @@
 
 
     {% for equipo in object_list %}
-    <a href="{% url 'detalle_equipo' equipo.id%}"> <img src="{{equipo.incono}}"></a>
+    <a href="{% url 'detalle_equipo' equipo.id%}"> <img title="{{equipo.nombre}}" src="{{equipo.incono}}"></a>
     {% endfor %}
 
    
 
     {% if is_paginated %}
+    <br></br>
         <div class="pagination">
             <span class="page-links">
                 {% if page_obj.has_previous %}
