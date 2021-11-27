@@ -3,7 +3,7 @@
 {% block title %}Búsqueda{% endblock %}
 
 {% block content %}
-<h1>Resultados</h1>
+<h1 class="display-4">Resultados</h1>
 <div class="row mt-4">
 <hr>
 <div class="col-md-12">
@@ -20,7 +20,29 @@
 
     {% if is_paginated %}
     <br></br>
-        <div class="pagination">
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item">
+            {% if page_obj.has_previous %}
+            <a class="page-link" href="{{ request.path }}?q={{query}}&page={{ page_obj.previous_page_number }}" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              {% endif %}
+            </a>
+          </li>
+          {% for page_obj in page_obj.paginator %}
+          <li class="page-item"><a class="page-link" href="">{{ page_obj.number }}</a></li>
+          {% endfor %}
+          <li class="page-item">
+            {% if page_obj.has_next %}
+            <a class="page-link" href="{{ request.path }}?q={{query}}&page={{ page_obj.next_page_number }}" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+              {% endif %}
+            </a>
+          </li>
+        </ul>
+      </nav>
+       <!-- <div class="pagination">
             <span class="page-links">
                 {% if page_obj.has_previous %}
                     <a href="{{ request.path }}?q={{query}}&page={{ page_obj.previous_page_number }}">anterior</a>
@@ -32,7 +54,7 @@
                     <a href="{{ request.path }}?q={{query}}&page={{ page_obj.next_page_number }}">siguiente</a>
                 {% endif %}
             </span>
-        </div>
+        </div> -->
     {% endif %}
 
 {% endif %}

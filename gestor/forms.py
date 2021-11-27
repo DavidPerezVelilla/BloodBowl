@@ -6,7 +6,7 @@ from crispy_forms.layout import Layout, Submit, Row, Column
 
 
 class EquipoForm(ModelForm):
-    '''Formulario para crear autores'''
+    
     class Meta:
         model = Equipo
         fields = '__all__'

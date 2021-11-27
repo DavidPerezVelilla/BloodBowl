@@ -12,9 +12,8 @@
 {% endblock%}
 
 {% block content %}
-<h1>Let's play Blood Bowl!!</h1>
-
-<strong class=my-5>Visitas: {{visitas}}</strong>
+<div align="center"><img src="https://www.bloodbowl.com/wp-content/themes/bloodbowl/library/images/BB2020_Logo.png">
+    <br><strong class=my-5>Visitas: {{visitas}}</strong></div>
 <br></br>
 <div id=inicio>
     Blood Bowl es un juego de tablero por turnos para dos jugadores. El juego está ambientado en el mundo de Warhammer
@@ -26,13 +25,24 @@
     y desarrollan habilidades nuevas con las que mejorar su rendimiento en el campo.
 </div>
 <br>
-<div>
-    <img class=foto
-        src="https://assets.dicebreaker.com/blood-bowl-miniatures-game-gameplay.png/BROK/resize/844%3E/format/jpg/quality/80/blood-bowl-miniatures-game-gameplay.png">
-</div>
+
+<div  id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="foto d-block w-100" src="https://assets.dicebreaker.com/blood-bowl-miniatures-game-gameplay.png/BROK/resize/844%3E/format/jpg/quality/80/blood-bowl-miniatures-game-gameplay.png" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="foto d-block w-100" src="https://powerups.es/wp-content/uploads/2020/10/0fM8tBkbZjCbIxE4.jpg" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="foto d-block w-100" src="https://www.belloflostsouls.net/wp-content/uploads/2020/02/BloodBowl-Feb19-HumanBlitzer2hd.jpg" alt="Third slide">
+      </div>
+    </div>
+  </div>
+
 <br>
 
-<h2>Reglamento</h2>
+<h2 class="display-4">Reglamento</h2>
 <br>
 <p>El reglamento de Blood Bowl ha ido variando a lo largo de la existencia del juego, intentando hacer las reglas cada
     vez más compensadas. El último reglamento oficial a día de hoy es el conocido como "Competition Rules Pack" o Living
@@ -79,4 +89,5 @@
 
 NOTA: Las últimas 4 acciones solo se pueden realizar por un jugador en cada turno. (No se pueden hacer dos
 acciones de falta, dos acciones de pase, etc en un mismo turno)
+
 {% endblock%}

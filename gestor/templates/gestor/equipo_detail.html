@@ -11,14 +11,21 @@
 <p><b>Descripcion:</b> {{equipo.desc}}</p>
 
 <p><b>Jugadores:</b>
-<ul>
-    
+
+<table  border="1px solid" class="table table-dark table-striped">
+     <tr>
+        {% for jugador in equipo.jugador_set.all %}
+         <th>{{jugador.equipo}}</th>
+         {% endfor %}
+     </tr>
+     <tr>
     {% for jugador in equipo.jugador_set.all %}
-    <li><a href="{% url 'detalle_jugador' jugador.id%}">{{jugador}}</a></li>
+    <td><a href="{% url 'detalle_jugador' jugador.id%}" class="text-info">{{jugador}}</a></td>
      {% endfor %}
- 
-</ul>
+     </tr>
+</table>
 </p>
+
 
 <img class=foto src="{{equipo.img}}">
 {% endblock%}
