@@ -12,15 +12,15 @@
 
 <p><b>Jugadores:</b>
 
-<table  border="1px solid" class="table table-dark table-striped">
+<table id="tj" class="table table-dark table-striped">
      <tr>
         {% for jugador in equipo.jugador_set.all %}
-         <th>{{jugador.equipo}}</th>
+         <th id="i">{{jugador.equipo}}</th>
          {% endfor %}
      </tr>
      <tr>
     {% for jugador in equipo.jugador_set.all %}
-    <td><a href="{% url 'detalle_jugador' jugador.id%}" class="text-info">{{jugador}}</a></td>
+    <td id="j"><a href="{% url 'detalle_jugador' jugador.id%}" class="text-info">{{jugador}}</a></td>
      {% endfor %}
      </tr>
 </table>
